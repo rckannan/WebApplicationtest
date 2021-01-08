@@ -1,4 +1,7 @@
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Web.Http;
+using WebApplication3.Controllers;
 
 namespace UnitTestProject1
 {
@@ -8,7 +11,15 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual("one", "one");
+            
+            var controller = new WeatherForecastController();
+
+            // Act
+            var actionResult = controller.Get();
+            var contentResult = actionResult;
+
+            // Assert
+            Assert.IsNotNull(contentResult); 
         }
     }
 }
