@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web.Http;
+using WebApplication3;
 using WebApplication3.Controllers;
 
 namespace UnitTestProject1
@@ -20,6 +21,16 @@ namespace UnitTestProject1
 
             // Assert
             Assert.IsNotNull(contentResult); 
+        }
+        [TestMethod]
+        public void TestMethod2()
+        {
+
+            var controller = new WeatherForecast();
+
+            // Act 
+            // Assert
+            Assert.IsNotNull(controller);
         }
     }
 }
